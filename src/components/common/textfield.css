@@ -1,0 +1,19 @@
+.form-control {
+    background: #15202B;
+    color:#fff;
+    border : 0px;
+    border-bottom : 1px solid #1DA1F2;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.form-control:focus{
+    background: #15202B;
+    color:#fff;
+    border : 0px;
+    border-bottom : 2px solid rgb(92, 62, 224);
+    -webkit-box-shadow: none;
+    outline: -webkit-focus-ring-color auto 0px;
+    margin:0px 0.4rem 0px 0.4rem;
+    transition: 0.3s;
+}
