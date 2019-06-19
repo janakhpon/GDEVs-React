@@ -54,10 +54,10 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div class="container pt-3">
-        <div class="row justify-content-sm-center">
+      <div className="container container-auth pt-3">
+        <div className="row justify-content-sm-center">
           <div className="col-md-6 col-sm-10 m-auto">
-            <div className="card border-primary text-center">
+            <div className="card card-auth border-primary text-center">
               <div className="card-header text-center">
                 <h1>GDEVS/SIGN UP</h1>
               </div>
@@ -106,14 +106,13 @@ class Register extends Component {
                       error={errors.password2}
                     />
                   </div>
-                  <div className="spacingxs"></div>
-                    <button
-                      className="btn btn-lg btn-block btn-primary"
-                      type="submit"
-                    >
-                      SIGN UP
-                    </button>
-                  
+                  <div className="spacingxs" />
+                  <button
+                    className="btn btn-lg btn-block btn-primary"
+                    type="submit"
+                  >
+                    SIGN UP
+                  </button>
                 </form>
               </div>
             </div>

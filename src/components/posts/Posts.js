@@ -5,6 +5,7 @@ import PostForm from './PostForm';
 import PostFeed from './PostFeed';
 import Spinner from '../common/Spinner';
 import { getPosts } from '../../actions/postActions';
+import './posts.css';
 
 class Posts extends Component {
   componentDidMount() {

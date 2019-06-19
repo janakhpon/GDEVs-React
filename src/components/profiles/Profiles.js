@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Spinner from '../common/Spinner';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/profileActions';
+import './profiles.css';
 
 class Profiles extends Component {
   componentDidMount() {
@@ -27,16 +28,10 @@ class Profiles extends Component {
     }
 
     return (
-      <div className="profiles">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4 text-center">Developer Profiles</h1>
-              <p className="lead text-center">
-                Browse and connect with developers
-              </p>
-              {profileItems}
-            </div>
+      <div className="container container-profile">
+        <div className="row">
+          <div className="card-deck">
+            {profileItems}
           </div>
         </div>
       </div>

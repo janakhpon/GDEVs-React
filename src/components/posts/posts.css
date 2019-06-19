@@ -1,0 +1,14 @@
+.card-post{
+     background: #15202B;
+     color: #fff;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    .img-post{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    
+}

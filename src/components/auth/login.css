@@ -1,9 +1,9 @@
-.container {
+.container-auth {
     margin-top: 10rem;
 
 }
 
-.card {
+.card-auth {
     background: #15202B;
     color: #fff;
     height: 60vh;
@@ -24,12 +24,12 @@
 
 @media (max-width: 410px) {
 
-    .container {
+    .container-auth {
         margin-top: 5rem;
 
     }
 
-    .card {
+    .card-auth {
         background: #15202B;
         color: #fff;
         height: 70vh;
@@ -52,12 +52,12 @@
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
 
-    .container {
+    .container-auth {
         margin-top: 5rem;
 
     }
 
-    .card {
+    .card-auth {
         background: #15202B;
         color: #fff;
         height: 70vh;

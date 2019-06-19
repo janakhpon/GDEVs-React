@@ -1,0 +1,20 @@
+.container-profile {
+    margin-top: 8rem;
+}
+.profile_item {
+    background: #15202B;
+    color: #fff;
+    height: 40vh;
+    box-shadow: 0 10px 20px rgba(231, 54, 98, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 1rem;
+}
+
+.list-group-item {
+      background: #10171E;
+      color:#FFFFFF;
+}
+
+img{
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.8rem rgba(16, 29, 167, 0.363),
+    0 6px 6px rgba(223, 81, 112, 0.507);
+}
