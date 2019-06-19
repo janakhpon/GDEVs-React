@@ -1,0 +1,118 @@
+.container {
+    margin-top: 10rem;
+
+}
+
+.card {
+    background: #15202B;
+    color: #fff;
+    height: 60vh;
+    box-shadow: 0 10px 20px rgba(231, 54, 98, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.login_input {
+    margin-top: 2rem;
+    padding: 0.5rem;
+
+}
+
+.login_input1 {
+    margin-top: 1rem;
+    padding: 0.2rem;
+
+}
+
+@media (max-width: 410px) {
+
+    .container {
+        margin-top: 5rem;
+
+    }
+
+    .card {
+        background: #15202B;
+        color: #fff;
+        height: 70vh;
+        box-shadow: 0 10px 20px rgba(231, 54, 98, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+
+    .login_input {
+        margin-top: 1.5rem;
+        padding: 0.5rem;
+
+    }
+
+    .login_input1 {
+        padding: 0.2rem;
+
+    }
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    .container {
+        margin-top: 5rem;
+
+    }
+
+    .card {
+        background: #15202B;
+        color: #fff;
+        height: 70vh;
+        box-shadow: 0 10px 20px rgba(231, 54, 98, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+
+    .login_input {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+
+    }
+
+    .login_input1 {
+
+        margin: opx;
+        padding: 0.2rem;
+
+    }
+
+
+    h1 {
+        font-weight: bold;
+
+    }
+}
+
+
+
+.checkbox {
+
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.checkbox>input {
+    border-radius: 50%;
+    color: aqua;
+}
+
+.checkbox>input:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+}
+
+.spacing {
+    margin-top: 2rem;
+}
+
+.spacingxs {
+    margin-top: 1rem;
+}
