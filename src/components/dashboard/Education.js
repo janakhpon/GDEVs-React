@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { deleteEducation } from '../../actions/profileActions';
+import './education.css';
 
 class Education extends Component {
   onDeleteClick(id) {
@@ -33,7 +34,7 @@ class Education extends Component {
       </tr>
     ));
     return (
-      <div>
+      <div className="education-container">
         <h4 className="mb-4">Education Credentials</h4>
         <table className="table">
           <thead>

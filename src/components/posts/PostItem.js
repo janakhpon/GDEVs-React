@@ -31,56 +31,69 @@ class PostItem extends Component {
     const { post, auth, showActions } = this.props;
 
     return (
-      <div className="card card-body mb-3">
+      <div className="card card-post card-body mb-2">
         <div className="row">
-          <div className="col-md-2">
-            <a href="profile.html">
-              <img
-                className="rounded-circle d-none d-md-block"
-                src={post.avatar}
-                alt=""
-              />
-            </a>
-            <br />
-            <p className="text-center">{post.name}</p>
+          <div className="col-md-1 col-sm-2 col-2">
+            <img
+              className="rounded-circle img-post"
+              src={post.avatar}
+              alt=""
+            />
           </div>
-          <div className="col-md-10">
-            <p className="lead">{post.text}</p>
-            {showActions ? (
-              <span>
-                <button
-                  onClick={this.onLikeClick.bind(this, post._id)}
-                  type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i
-                    className={classnames('fas fa-thumbs-up', {
-                      'text-info': this.findUserLike(post.likes)
-                    })}
-                  />
-                  <span className="badge badge-light">{post.likes.length}</span>
-                </button>
-                <button
-                  onClick={this.onUnlikeClick.bind(this, post._id)}
-                  type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i className="text-secondary fas fa-thumbs-down" />
-                </button>
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
-                  Comments
-                </Link>
-                {post.user === auth.user.id ? (
+          <div className="col-md-11 col-sm-9 col-9">
+            <div className="row post-name">
+              <h1 className="lead">{post.name}</h1>
+            </div>
+            <div className="post-content">
+              <p className="lead" style={{ marginLeft: "1rem" }}>
+                {post.text}
+              </p>
+            </div>
+            <div className="post-actions">
+              {showActions ? (
+                <span>
                   <button
-                    onClick={this.onDeleteClick.bind(this, post._id)}
+                    onClick={this.onLikeClick.bind(this, post._id)}
                     type="button"
-                    className="btn btn-danger mr-1"
+                    className="btn bg-transparent mr-1 like-button"
                   >
-                    <i className="fas fa-times" />
+                    <i
+                      className={classnames(
+                        "fas fa-thumbs-up bg-transparent",
+                        {
+                          "text-info": this.findUserLike(post.likes)
+                        }
+                      )}
+                    />
+                    <span className="badge bg-transparent text-danger bold">
+                      {post.likes.length}
+                    </span>
                   </button>
-                ) : null}
-              </span>
-            ) : null}
+                  <button
+                    onClick={this.onUnlikeClick.bind(this, post._id)}
+                    type="button"
+                    className="btn btn-transparent mr-1"
+                  >
+                    <i className="text-secondary fas fa-thumbs-down bg-transparent" />
+                  </button>
+                  <Link
+                    to={`/post/${post._id}`}
+                    className="btn btn-info mr-1"
+                  >
+                    Comments
+                  </Link>
+                  {post.user === auth.user.id ? (
+                    <button
+                      onClick={this.onDeleteClick.bind(this, post._id)}
+                      type="button"
+                      className="btn btn-transparent text-danger mr-1"
+                    >
+                      <i className="fas fa-times" />
+                    </button>
+                  ) : null}
+                </span>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import ProfileHeader from './ProfileHeader';
 import ProfileAbout from './ProfileAbout';
 import ProfileCreds from './ProfileCreds';
 import ProfileGithub from './ProfileGithub';
 import Spinner from '../common/Spinner';
 import { getProfileByHandle } from '../../actions/profileActions';
+import './Profile.css';
 
 class Profile extends Component {
   componentDidMount() {
@@ -30,24 +30,88 @@ class Profile extends Component {
       profileContent = <Spinner />;
     } else {
       profileContent = (
-        <div>
-          <div className="row">
-            <div className="col-md-6">
-              <Link to="/profiles" className="btn btn-light mb-3 float-left">
-                Back To Profiles
-              </Link>
+        <div className="container container-profile-main">
+          <div className="card card-tab">
+            <ul
+              className="nav nav-pills mb-3 nav-justified"
+              id="pills-tab"
+              role="tablist"
+            >
+              <li className="nav-item">
+                <a
+                  className="nav-link active"
+                  id="pills-home-tab"
+                  data-toggle="pill"
+                  href="#pills-home"
+                  role="tab"
+                  aria-controls="pills-home"
+                  aria-selected="true"
+                >
+                  Profile
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  id="pills-profile-tab"
+                  data-toggle="pill"
+                  href="#pills-profile"
+                  role="tab"
+                  aria-controls="pills-profile"
+                  aria-selected="false"
+                >
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  id="pills-contact-tab"
+                  data-toggle="pill"
+                  href="#pills-contact"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Projects
+                </a>
+              </li>
+            </ul>
+
+            <div className="tab-content tab-space" id="pills-tabContent">
+              <div
+                className="tab-pane fade show active"
+                id="pills-home"
+                role="tabpanel"
+                aria-labelledby="pills-home-tab"
+              >
+                <ProfileHeader profile={profile} />
+              </div>
+              <div
+                className="tab-pane fade"
+                id="pills-profile"
+                role="tabpanel"
+                aria-labelledby="pills-profile-tab"
+              >
+                <ProfileAbout profile={profile} />
+                <ProfileCreds
+                  education={profile.education}
+                  experience={profile.experience}
+                />
+              </div>
+
+              <div
+                className="tab-pane fade"
+                id="pills-contact"
+                role="tabpanel"
+                aria-labelledby="pills-contact-tab"
+              >
+                {profile.githubusername ? (
+                  <ProfileGithub username={profile.githubusername} />
+                ) : null}
+              </div>
             </div>
-            <div className="col-md-6" />
           </div>
-          <ProfileHeader profile={profile} />
-          <ProfileAbout profile={profile} />
-          <ProfileCreds
-            education={profile.education}
-            experience={profile.experience}
-          />
-          {profile.githubusername ? (
-            <ProfileGithub username={profile.githubusername} />
-          ) : null}
         </div>
       );
     }

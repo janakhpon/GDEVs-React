@@ -53,10 +53,10 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div class="container pt-3">
-        <div class="row justify-content-sm-center">
+      <div className="container container-auth pt-3">
+        <div className="row justify-content-sm-center">
           <div className="col-md-6 col-sm-10 m-auto">
-            <div className="card border-primary text-center">
+            <div className="card card-auth border-primary text-center">
               <div className="card-header text-center">
                 <h1>GDEVS/LOGIN</h1>
               </div>
