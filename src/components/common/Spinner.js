@@ -1,14 +1,22 @@
 import React from 'react';
-import spinner from './spinner.gif';
 
 export default () => {
   return (
     <div>
-      <img
-        src={spinner}
-        style={{ width: '200px', margin: 'auto', display: 'block' }}
-        alt="Loading..."
-      />
+      <div
+        className="text-center spin-container"
+        style={{ top:'45%', margin: "auto", display: "block" }}
+      >
+        <div className="spinner-grow text-primary" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+        <div className="spinner-grow text-success" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+        <div className="spinner-grow text-danger" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
     </div>
   );
 };

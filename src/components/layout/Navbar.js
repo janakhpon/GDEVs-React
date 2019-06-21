@@ -16,17 +16,44 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          <Link className="nav-link" to="/feed">
-            Post Feed
-          </Link>
-        </li>
+      <ul className="navbar-nav ml-auto" id="top">
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-            Dashboard
+            <i class="fa fa-home" aria-hidden="true" />
+            Home
           </Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            <i class="far fa-newspaper" />
+            JOB Post
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            <i class="fa fa-th-large" aria-hidden="true" />
+            Articles
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            <i class="fa fa-code" />
+            Issues
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            <i class="fa fa-laptop" aria-hidden="true" />
+            Projects
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            <i class="fa fa-tasks" />
+            Task
+          </Link>
+        </li>
+
         <li className="nav-item">
           <a
             href=""
@@ -62,32 +89,30 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark" >
-       
-          <Link className="navbar-brand" to="/">
-            GDEVs
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#mobile-nav"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
+      <nav className="navbar navbar-expand-lg navbar-dark">
+        <Link className="navbar-brand" to="/">
+          GDEVs
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#mobile-nav"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
 
-          <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  {" "}
-                  Developers
-                </Link>
-              </li>
-            </ul>
-            {isAuthenticated ? authLinks : guestLinks}
-          </div>
-       
+        <div className="collapse navbar-collapse" id="mobile-nav">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/profiles">
+                <i class="fas fa-users" />
+                Developers
+              </Link>
+            </li>
+          </ul>
+          {isAuthenticated ? authLinks : guestLinks}
+        </div>
       </nav>
     );
   }

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import { addPost } from '../../actions/postActions';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import { addPost } from "../../actions/postActions";
 
 class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
+      text: "",
       errors: {}
     };
 
@@ -34,7 +34,7 @@ class PostForm extends Component {
     };
 
     this.props.addPost(newPost);
-    this.setState({ text: '' });
+    this.setState({ text: "" });
   }
 
   onChange(e) {
@@ -45,26 +45,62 @@ class PostForm extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="post-form mb-3">
-        <div className="card card-info">
-          <div className="card-header bg-info text-white">Say Somthing...</div>
-          <div className="card-body">
-            <form onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <TextAreaFieldGroup
-                  placeholder="Create a post"
-                  name="text"
-                  value={this.state.text}
-                  onChange={this.onChange}
-                  error={errors.text}
-                />
+      <div
+        className="modal fade bg-transparent"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <form onSubmit={this.onSubmit}>
+          <div
+            className="modal-dialog modal-dialog-centered"
+            role="document"
+          >
+            <div className="modal-content bg-transparent">
+              <div className="modal-header bg-transparent">
+                <h5
+                  className="modal-title bg-transparent"
+                  id="exampleModalCenterTitle"
+                >
+                  Modal title
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <button type="submit" className="btn btn-dark">
-                Submit
-              </button>
-            </form>
+              <div className="modal-body bg-transparent">
+                <div className="form-group">
+                  <TextAreaFieldGroup
+                    placeholder="Create a post"
+                    name="text"
+                    value={this.state.text}
+                    onChange={this.onChange}
+                    error={errors.text}
+                  />
+                </div>
+              </div>
+              <div className="modal-footer bg-transparent">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" className="btn btn-dark">
+                  Submit
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     );
   }
@@ -81,4 +117,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { addPost })(PostForm);
+export default connect(
+  mapStateToProps,
+  { addPost }
+)(PostForm);
