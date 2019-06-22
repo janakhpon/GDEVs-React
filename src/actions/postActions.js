@@ -33,7 +33,7 @@ export const addPost = postData => dispatch => {
 export const getPosts = () => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get('/api/posts')
+    .get("https://gdevs.herokuapp.com/api/posts")
     .then(res =>
       dispatch({
         type: GET_POSTS,
@@ -52,7 +52,7 @@ export const getPosts = () => dispatch => {
 export const getPost = id => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get(`/api/posts/${id}`)
+    .get(`https://gdevs.herokuapp.com/api/posts/${id}`)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -70,7 +70,7 @@ export const getPost = id => dispatch => {
 // Delete Post
 export const deletePost = id => dispatch => {
   axios
-    .delete(`/api/posts/${id}`)
+    .delete(`https://gdevs.herokuapp.com/api/posts/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_POST,
@@ -88,7 +88,7 @@ export const deletePost = id => dispatch => {
 // Add Like
 export const addLike = id => dispatch => {
   axios
-    .post(`/api/posts/like/${id}`)
+    .post(`https://gdevs.herokuapp.com/api/posts/like/${id}`)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -101,7 +101,7 @@ export const addLike = id => dispatch => {
 // Remove Like
 export const removeLike = id => dispatch => {
   axios
-    .post(`/api/posts/unlike/${id}`)
+    .post(`https://gdevs.herokuapp.com/api/posts/unlike/${id}`)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -115,7 +115,10 @@ export const removeLike = id => dispatch => {
 export const addComment = (postId, commentData) => dispatch => {
   dispatch(clearErrors());
   axios
-    .post(`/api/posts/comment/${postId}`, commentData)
+    .post(
+      `https://gdevs.herokuapp.com/api/posts/comment/${postId}`,
+      commentData
+    )
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -133,7 +136,9 @@ export const addComment = (postId, commentData) => dispatch => {
 // Delete Comment
 export const deleteComment = (postId, commentId) => dispatch => {
   axios
-    .delete(`/api/posts/comment/${postId}/${commentId}`)
+    .delete(
+      `https://gdevs.herokuapp.com/api/posts/comment/${postId}/${commentId}`
+    )
     .then(res =>
       dispatch({
         type: GET_POST,
